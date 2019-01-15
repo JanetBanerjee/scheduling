@@ -1,0 +1,25 @@
+<%= form_for @post, class: "form-horizonatl" do |f| %>
+
+  <div class="form-group">
+    <%= f.label :employee, class: "col-sm-2 control-label" %>
+    <%= f.select :employee, User.pluck(:first_name) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :date, class: "col-sm-2 control-label" %>
+    <%= f.date_select :shift_date, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :start_time, class: "col-sm-2 control-label" %>
+    <%= f.time_select :start_time, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :end_time, class: "col-sm-2 control-label" %>
+    <%= f.time_select :end_time, class: "form-control" %>
+  </div>
+
+  <%= f.submit 'Save', class: 'btn btn-primary btn-block' %>
+
+<%end%>

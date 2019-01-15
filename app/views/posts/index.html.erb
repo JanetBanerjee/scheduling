@@ -1,0 +1,16 @@
+<%= week_calendar events: @post, number_of_weeks: 2 do |date| %>
+  <%= date.day %>
+
+  <% d = date %>
+  <br>
+  <% @post.each do |f| %>
+    <% if f.shift_date == date %>
+      <%= f.employee %>
+      <br>
+      <%= f.start_time %>
+      <br>
+      <%= f.shift_date %>
+      <% end %>
+  <% end %>
+<% end %>
+
